@@ -26,14 +26,7 @@ class partitsController extends Controller
         return view('partits/edit', compact('partits'));
     }
 
-    public function update(partitsRequest $request, partits $partits) { 
-        /*$request->validate([ 
-            'equipo1_id' => 'required | max:255',
-            'equipo2_id' => 'required | max:255',
-            'date' => 'required | max:255',
-            'resultado' => 'required | max:255',
-        ]);*/
-       
+    public function update(partitsRequest $request, partits $partits) {  
         $partits->update($request->all());
         return redirect()->route('partits.index');
     }

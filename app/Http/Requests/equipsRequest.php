@@ -33,7 +33,7 @@ class equipsRequest extends FormRequest
     public function attributes() {
         return [
             'Nombre_Equipo' => 'Nombre_Equipo',
-            'Categoria' => 'categoria',
+            'Categoria' => 'Categoria',
             'entrenador' => 'entrenador',
             'phone_number' => 'phone_number',
         ];
@@ -42,7 +42,7 @@ class equipsRequest extends FormRequest
     public function messages(){
         return [
             "Nombre_Equipo.required" => "El :attribute es un parametro requerido",
-            "categoria.required" => "El :attribute es un parametro requerido",
+            "Categoria.required" => "El :attribute es un parametro requerido",
             "entrenador.required" => "El :attribute es un parametro requerido",
             "phone_number.required" => "El :attribute es un parametro requerido",
         ];

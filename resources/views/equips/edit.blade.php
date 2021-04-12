@@ -17,8 +17,8 @@
 <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputcategoria">Categoria</label>
-      <input name=categoria type="text" class="form-control" id="inputcategoria" placeholder="Categoria" value="{{ old('Categoria', $equips->Categoria) }}">
-    @error('categoria')
+      <input name=Categoria type="text" class="form-control" id="inputcategoria" placeholder="Categoria" value="{{ old('Categoria', $equips->Categoria) }}">
+    @error('Categoria')
      <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 </div></br>
@@ -34,12 +34,10 @@
     <div class="form-group col-md-6">
       <label for="inputphone_number">Teléfono</label>
       <input name=phone_number type="text" class="form-control" id="inputphone_number" placeholder="Teléfono" value="{{ old('phone_number', $equips->phone_number) }}">
-    </div>
     @error('phone_number')
      <div class="alert alert-danger">{{ $message }}</div>
     @enderror
-  </div>
-</br>
+  </div></br>
   <button type="submit" class="btn btn-warning">Editar</button>
 </form>
 </div>

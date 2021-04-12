@@ -33,7 +33,7 @@ class partitsRequest extends FormRequest
     public function attributes() {
         return [
             'equip1_id' => 'equip1_id',
-            'equip2_id' => 'equip1_id',
+            'equip2_id' => 'equip2_id',
             'date' => 'date',
             'resultado' => 'resultado',
         ];

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Equips;
 use App\Http\Requests\equipsRequest;
 
+
 class EquipsFutbolController extends Controller
 {
     public function index(Request $request) {
@@ -22,9 +23,19 @@ class EquipsFutbolController extends Controller
         return redirect()->route('equips.index');
      }
 
+    /* Busqueda de equipos
     public function show (equips $equips, $id) {
         $equips = Equips::findOrFail ($id);
         return view ('equips/show', compact('equips'));
+    }*/
+
+   //Busqueda de equipo y los partidos que ha jugado 
+    public function show (Request $request, $id)
+    {
+        $equips = Equips::findOrFail ($id);
+       return view ('equips/show')
+                ->with('equips', $equips)
+                ->with('partits', $equips->partits);
     }
 
     public function edit(equips $equips) { 
@@ -34,7 +45,7 @@ class EquipsFutbolController extends Controller
      public function update(Request $request, equips $equips) { 
         $request->validate([ 
             'Nombre_Equipo' => 'required | max:255',
-            'categoria' => 'required | max:255',
+            'Categoria' => 'required | max:255',
             'entrenador' => 'required | max:255',
             'phone_number' => 'required | max:255',
         ]);
