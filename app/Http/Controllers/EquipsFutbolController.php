@@ -53,7 +53,9 @@ class EquipsFutbolController extends Controller
         return redirect()->route('equips.index');
     }
 
-    public function destroy(equips $equips) {
+     //CUIDADO!!!! Se borran tb los partidos en los que jugara el equipo 
+     public function destroy(equips $equips) {
+        $equips->partits->each->delete();
         $equips->delete();
         return redirect()->route('equips.index');
     }
